@@ -1,0 +1,46 @@
+/* Overlay sempre visibile come sfondo */
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .gradient-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, #c8c7c8 0%, #c8c7c8 100%);
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1;
+  }
+  
+  .wing-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 5s ease;
+    z-index: 2;
+  }
+  
+  /* Scritte sopra tutto */
+  .site-header,
+  .section-wrapper {
+    z-index: 3;
+    position: relative;
+  }
+  
+  /* Transizione più dolce */
+  .hidden {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .visible {
+    opacity: 1 !important;
+  }
+  
